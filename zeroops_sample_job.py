@@ -62,7 +62,7 @@ orders_clean = orders_raw.withColumn("discount_pct", F.coalesce(F.expr("try_cast
 # ============================================================================
 # ERROR 3: Strict cast. Fails on the 'N/A' values in discount_pct.
 #          Uncomment the next line to turn this bug on.
-orders_clean = orders_raw.withColumn("discount_pct", F.col("discount_pct").cast("int"))
+#orders_clean = orders_raw.withColumn("discount_pct", F.col("discount_pct").cast("int"))
 # ============================================================================
 
 # Order amount after discount.
@@ -92,7 +92,7 @@ orders_by_region = (
 # ============================================================================
 # ERROR 2: Variable name typo. 'order_clean' is never defined.
 #          Uncomment the next line to turn this bug on.
-orders_by_region = order_clean.groupBy("region").agg(F.count("order_id").alias("order_count"))
+#orders_by_region = order_clean.groupBy("region").agg(F.count("order_id").alias("order_count"))
 # ============================================================================
 
 # COMMAND ----------
